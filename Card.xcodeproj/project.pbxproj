@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		621C3EBF4BB057D64F49C7F3 /* Pods_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723668D9632B7D40B9913F5E /* Pods_Card.framework */; };
+		6C4C23161EE9339600925D16 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C23151EE9339600925D16 /* Hero.swift */; };
+		6C4C23181EE9603500925D16 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C23171EE9603500925D16 /* HeroesViewController.swift */; };
+		6C4C231A1EE96CF300925D16 /* HeroViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C23191EE96CF300925D16 /* HeroViewCell.swift */; };
 		6CC55A141EE8867D0013F307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC55A131EE8867D0013F307 /* AppDelegate.swift */; };
 		6CC55A161EE8867D0013F307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC55A151EE8867D0013F307 /* ViewController.swift */; };
 		6CC55A191EE8867D0013F307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CC55A171EE8867D0013F307 /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		01344393775D772418FAA35B /* Pods-Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Card.release.xcconfig"; path = "Pods/Target Support Files/Pods-Card/Pods-Card.release.xcconfig"; sourceTree = "<group>"; };
+		6C4C23151EE9339600925D16 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		6C4C23171EE9603500925D16 /* HeroesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
+		6C4C23191EE96CF300925D16 /* HeroViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroViewCell.swift; sourceTree = "<group>"; };
 		6CC55A101EE8867C0013F307 /* Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Card.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC55A131EE8867D0013F307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CC55A151EE8867D0013F307 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 				6CC55A1C1EE8867D0013F307 /* LaunchScreen.storyboard */,
 				6CC55A1F1EE8867D0013F307 /* Info.plist */,
 				6CC55A251EE8872A0013F307 /* heroes.json */,
+				6C4C23151EE9339600925D16 /* Hero.swift */,
+				6C4C23171EE9603500925D16 /* HeroesViewController.swift */,
+				6C4C23191EE96CF300925D16 /* HeroViewCell.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -218,6 +227,9 @@
 			files = (
 				6CC55A161EE8867D0013F307 /* ViewController.swift in Sources */,
 				6CC55A141EE8867D0013F307 /* AppDelegate.swift in Sources */,
+				6C4C23181EE9603500925D16 /* HeroesViewController.swift in Sources */,
+				6C4C23161EE9339600925D16 /* Hero.swift in Sources */,
+				6C4C231A1EE96CF300925D16 /* HeroViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +358,7 @@
 				DEVELOPMENT_TEAM = 755J3G52NH;
 				INFOPLIST_FILE = Card/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.mokko.Card;
+				PRODUCT_BUNDLE_IDENTIFIER = io.mokko.dota2heroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -360,7 +372,7 @@
 				DEVELOPMENT_TEAM = 755J3G52NH;
 				INFOPLIST_FILE = Card/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.mokko.Card;
+				PRODUCT_BUNDLE_IDENTIFIER = io.mokko.dota2heroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

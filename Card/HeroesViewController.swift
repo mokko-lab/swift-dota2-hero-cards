@@ -1,39 +1,49 @@
 //
-//  ViewController.swift
+//  HeroesViewController.swift
 //  Card
 //
 //  Created by Mitesh Shah on 6/8/17.
 //  Copyright © 2017 Mokko. All rights reserved.
 //
 
+import Foundation
+
 import UIKit
 import Foundation
 import SDWebImage
 
-class ViewController: UIViewController {
-
-    @IBOutlet var txtName: UILabel?
-    @IBOutlet var txtStrength : UILabel?
-    @IBOutlet var txtAgility: UILabel?
-    @IBOutlet var imgHeroImage: UIImageView?
+class HeroesViewController: UICollectionViewController {
     
     var heroes = [Hero]()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        // Import Heroes from JSON.
         readJson()
-        pickRandomHero()
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        collectionView?.dataSource = self;
     }
-
+    
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return heroes.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let hero = heroes[indexPath.row]
+        
+        let cell : HeroViewCell  = collectionView.dequeueReusableCell(withReuseIdentifier: "heroCell", for: indexPath) as! HeroViewCell
+        cell.setHero(hero: hero)
+        
+        return cell;
+    }
+    
     
     func readJson() {
         do {
@@ -45,7 +55,7 @@ class ViewController: UIViewController {
                     print(object)
                 } else if let object = json as? [Any] {
                     // json is an array
-                   // print(object)
+                    // print(object)
                     
                     object.forEach({ (node) in
                         
@@ -55,7 +65,7 @@ class ViewController: UIViewController {
                         if(hero != nil) {
                             heroes.append(hero!);
                         }
- 
+                        
                     })
                 } else {
                     print("JSON is invalid")
@@ -68,31 +78,5 @@ class ViewController: UIViewController {
         }
     }
     
-    func applyHero(index : NSInteger) {
-        if(heroes.count > index) {
-            let hero = heroes[index]
-            txtName?.text = hero.name
-            txtStrength?.text = String(format: "%.0f", hero.strength)
-            txtAgility?.text = String(format: "%.0f", hero.agility)
-            
-            imgHeroImage?.sd_setImage(with: URL(string: hero.imageUrl))
-            
-        }
-    }
-    
-    func pickRandomHero(){
-        
-        if(heroes.count > 0) {
-            let rand = Int(arc4random_uniform(UInt32(heroes.count)))
-            applyHero(index: rand)
-        }
-    }
-    
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            pickRandomHero()
-        }
-    }
     
 }
-
